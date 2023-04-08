@@ -61,3 +61,30 @@ function mathOperation() {
     result = parseFloat(result) + parseFloat(dis2Num);
   }
 }
+
+equal.addEventListener("click", () => {
+  if (!dis1Num || !dis1Num) return;
+  haveDot = false;
+  mathOperation();
+  clearVar();
+  display.innerText = result;
+  tempResult.innerText = "";
+  dis2Num = result;
+  dis1Num = "";
+});
+
+clearAll.addEventListener("click", () => {
+  dis1Num = "";
+  dis2Num = "";
+  haveDot = false;
+  displayHistory.innerText = "";
+  display.innerText = "";
+  tempResult.innerText = "";
+  result = "";
+  lastOperation = "";
+});
+
+clearLast.addEventListener("click", () => {
+  display.innerText = "";
+  dis2Num = "";
+});
